@@ -1,0 +1,96 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - submit_review
+  - provide_airline
+  - provide_rating
+  - provide_short_review
+  - submit_another_review
+  - no_more_review
+  - ask_question
+  - more_question
+  - no_more_question
+
+
+entities:
+  - airline
+  - rating
+  - review
+
+
+slots:
+  airline:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: airline
+
+
+  rating:
+    type: float
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: rating
+
+
+  review:
+    type: text 
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: review
+
+
+responses:
+  utter_greet:
+    - text: "Hello! I am AirlineBuddy. What how can I help you today?"
+
+
+  utter_goodbye:
+    - text: "Goodbye! Hope you have a great day!"
+
+
+  utter_any_more_questions:
+    - text: "Do you have any more questions to ask?"
+
+
+  utter_no_more_questions:
+    - text: "Alright! Hope I was able to help you with your queries."
+
+
+  utter_additional_questions:
+    - text: "Sure! What else would you like to know more about?"
+
+
+  utter_ask_airline:
+    - text: "Which airline would you like to review?"
+
+
+  utter_ask_rating:
+    - text: "Got it. What would you rate it on a scale of 1 to 5?"
+
+
+  utter_ask_review:
+    - text: "Alright. Now please provide a short detailed review."
+
+
+  utter_thank_for_review:
+    - text: "Alright! Thank you for the review!"
+
+
+actions:
+  - action_review_summary
+  - action_fetch_answer
+
+  
+regex:
+  review: "^(.*)$"
+  
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

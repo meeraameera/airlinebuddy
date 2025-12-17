@@ -1,0 +1,59 @@
+version: "3.1"
+
+stories:
+- story: User wants to submit an airline review
+  steps:
+  - intent: submit_review
+  - action: utter_ask_airline
+  - intent: provide_airline
+    entities:
+      - airline: "Emirates"
+  - slot_was_set:
+      - airline: "Emirates"
+  - action: utter_ask_rating
+  - intent: provide_rating
+    entities:
+      - rating: 4.5
+  - slot_was_set:
+      - rating: 4.5
+  - action: utter_ask_review
+  - intent: provide_short_review
+    entities:
+    - review: "The legroom was spacious and the staff was attentive"
+  - slot_was_set:
+    - review: "The legroom was spacious and the staff was attentive"
+  - action: action_review_summary
+
+
+- story: User wants to submit another review
+  steps:
+  - intent: submit_another_review
+  - action: utter_ask_airline
+
+
+- story: User does not want to submit another review
+  steps:
+  - intent: no_more_review
+  - action: utter_thank_for_review
+
+
+- story: User asks a question
+  steps:
+    - intent: ask_question
+    - action: action_fetch_answer
+    - action: utter_any_more_questions
+
+
+- story: User has more questions
+  steps:
+    - intent: more_question
+    - action: utter_additional_questions
+    - intent : ask_question
+    - action: action_fetch_answer
+    - action: utter_any_more_questions
+
+
+- story: User has no more questions
+  steps:
+    - intent: no_more_question
+    - action: utter_no_more_questions

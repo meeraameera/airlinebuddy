@@ -1,0 +1,136 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Hello
+    - Hi
+    - Hey
+    - Hi there
+    - Hello there
+    - Greetings
+
+
+- intent: goodbye
+  examples: |
+    - Goodbye
+    - Bye
+    - See you later
+    - Have a good day
+    - Bye bye
+    - Take care
+
+
+- intent: submit_review
+  examples: |
+    - I want to submit a review
+    - I want to write a review
+    - I want to leave a review
+    - I have a review to give
+    - Can I leave a review?
+    - Can I write a review?
+    - Can I submit a review?
+
+
+- intent: provide_airline
+  examples: |
+    - I want to submit a review for [Emirates](airline)
+    - I want to leave a review for [Qatar Airways](airline)
+    - I want to write a review for [Singapore Airlines](airline)
+    - I want to place a review for [Japan Airlines](airline)
+    - [AirAsia](airline)
+    - [Jetstar](airline)
+    - [Scoot](airline)
+    - [Cathay Pacific](airline)
+    - [ANA](airline)
+
+
+- intent: provide_rating
+  examples: |
+    - [4.5](rating)
+    - [4.0](rating)
+    - [3.5](rating)
+    - [5](rating) 
+    - I give it a [4](rating)
+    - I rate it [3](rating) out of 5
+    - I would rate it [2](rating) stars
+    - [3](rating) stars
+    - [2](rating) out of 5
+    - [1](rating) star
+
+
+- intent: provide_short_review
+  examples: |
+    - [The flight was on time and the service was excellent](review)
+    - [The food was bad and the staff was rude](review)
+    - [The flight was delayed and the staff was unhelpful](review)
+    - [The flight was cancelled and I was not informed](review)
+    - [The flight was smooth and the staff was friendly](review)
+    - [The flight was bumpy and the staff was unprofessional](review)
+    - [The food was delicious and the staff was helpful](review)
+    - [The legroom was spacious and the staff was attentive](review)
+    - [The flight was noisy and the staff was inattentive]](review)
+    - [The flight was clean and the staff was polite](review)
+
+
+- intent: submit_another_review
+  examples: |
+    - Yes I want to submit another review
+    - Yes I want to write another review
+    - Yes I want to leave another review
+    - Yes I will like to submit another review
+    - Yes I will like to write another review
+    - Yes I will like to leave another review
+    - Yes please
+
+
+- intent: no_more_review
+  examples: |
+    - No I do not want to submit another review
+    - No I don't want to submit another review
+    - No I do not want to write another review
+    - No I don't want to leave another review
+    - No thanks
+    - No thank you
+
+- intent: ask_question
+  examples: |
+    - What is the baggage allowance for Emirates in Business Class?
+    - What is the check-in process for Qatar Airways?
+    - How do I reschedule my flight for Singapore Airlines?
+    - Tell me about the refund policy for AirAsia.
+    - What is the in-flight meal policy for Jetstar?
+    - How do I upgrade my seat for Scoot?
+    - Is there free Wi-Fi on Cathay Pacific?
+    - What is the cancellation policy for ANA?
+    - How do I book a flight with Japan Airlines?
+    - What if I am on a wheelchair with China Airlines?
+
+
+- intent: more_question
+  examples: |
+    - Yes I have more questions
+    - Yes I want to ask more questions
+    - Yes I want to know more
+    - Yes I want to ask something else
+    - Yes I have another question
+    - Yes I have a question
+    - Yes I want to ask something
+    - Yes I want to know more about something
+
+
+- intent: no_more_question
+  examples: |
+    - No I do not have any more questions
+    - No I don't have any more questions
+    - No I do not want to ask any more questions
+    - No I don't want to ask any more questions
+    - No that's all
+    - No that's it
+    - No that's all I have
+    - No that's all I want to know
+    - No that's all I want to ask
+    - No that's all I want to ask about
+    - No that's all I want to ask for
+    - No that's all I want to ask for now
+    - No that's all I want to ask for today
